@@ -21,7 +21,7 @@ let GetDataOnlyFunc = async (req, res) => {
         return;
     };
 
-    res.status(200).json(LocalFromRepo);
+    res.status(200).json(LocalFromRepo.Count);
 };
 
 let GetDataCountFunc = async (req, res) => {

@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app",
-    "home": "vite build --config KCode/viteConfig/vite.config-bs5.js"
+    "home": "vite build --config KCode/viteConfig/vite.config-bs5.js",
+    "WA": "vite build --config vite.config-WA.js"
   },
   "author": "",
   "license": "ISC",
@@ -35,8 +36,11 @@
     "@sweetalert2/theme-dark": "^5.0.15",
     "bootstrap": "5.3.3",
     "bootstrap-icons": "^1.10.5",
+    "feather-icons": "^4.29.2",
+    "perfect-scrollbar": "^1.5.6",
     "sass": "^1.67.0",
     "sass-loader": "^13.2.0",
+    "sweetalert2": "^11.17.2",
     "vite": "^5.2.0",
     "vite-plugin-handlebars": "^2.0.0",
     "vite-plugin-nunjucks": "^0.2.0",
