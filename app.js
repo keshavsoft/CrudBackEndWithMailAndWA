@@ -11,6 +11,7 @@ import { StartFunc as StartFuncPortListen } from "./PortListen.js";
 
 import { StartFunc as MiddleWaresBinSecured } from "./MiddleWares/MiddleWares.binSecured/EntryFile.js";
 import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
+import { StartFunc as StartFuncFromEntryFile } from "./WA/entryFile.js";
 
 import express from 'express';
 import http from 'http';
@@ -42,6 +43,10 @@ app.use('/', express.static(path.join(path.resolve(), 'public')));
 app.get("/k1", (req, res) => {
     res.end("this is k1");
 })
+
+app.get('/StartWA', async (req, res) => {
+    await StartFuncFromEntryFile({ inReponse: res });
+});
 
 const CommonCorsFunc = (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from

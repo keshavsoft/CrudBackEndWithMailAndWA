@@ -28,6 +28,7 @@
     "querystring": "^0.2.1",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7",
+    "whatsapp-web.js": "^1.26.0",
     "ws": "^8.18.0"
   },
   "devDependencies": {

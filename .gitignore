@@ -135,6 +135,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# for crud backend
 binV4/
 binV5Secured/
 
@@ -149,3 +150,7 @@ public/
 .log
 
 defineConfig.js
+
+# for whatsapp
+.wwebjs_cache
+.wwebjs_auth
