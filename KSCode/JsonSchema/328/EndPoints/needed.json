@@ -7,5 +7,6 @@
     "Upload",
     "Alter",
     "Images",
-    "AggrFuncs"
+    "AggrFuncs",
+    "SelectedColumns"
 ]
