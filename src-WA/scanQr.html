@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #ShowQrCodeDivId {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0px;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ShowQrCodeDivId" style="width: 244px; height: 244px;">
+        <canvas id="CanvasId" width=4 height=4 style=" border:1px solid #fff;visibility:hidden"></canvas>
+        <div style="text-align: center;">Scan the above qrcode from your mobile Whatsapp <strong
+                id="ShowDateId">Time</strong> </div>
+    </div>
+</body>
+
+<script src="./Js/ScanQr/bwip-js-min.js"></script>
+
+<script>
+    let webSocket;
+    let KSQrRec;
+    let KSWAProfile;
+    let KSIntervalId;
+
+    let jFStartWA = async () => {
+        let resource = "/StartWA";
+        await fetch(resource);
+    };
+
+    jFStartWA().then(() => {
+        console.log("sssssssssssss");
+    });
+</script>
+
+<script type="module" src="./Js/ScanQr/WebSocket/entryFile.js"></script>
+<script type="module" src="./Js/ScanQr/entryFile.js"></script>
+
+</html>
