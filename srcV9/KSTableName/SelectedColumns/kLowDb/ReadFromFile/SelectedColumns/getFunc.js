@@ -1,8 +1,8 @@
 import { StartFunc as StartFuncPullData } from "../../PullData/EntryFile.js";
+import _ from "lodash";
 
 let StartFunc = ({ inRequestBody }) => {
   let LocalRequestBody = inRequestBody;
-  console.log("LocalRequestBody: ", LocalRequestBody);
 
   let LocalReturnData = { KTF: false };
 
@@ -18,20 +18,11 @@ let StartFunc = ({ inRequestBody }) => {
   const LocalData = db.data;
 
   LocalReturnData.KTF = true;
-  LocalReturnData.JsonData = LocalData;
-
-  return LocalReturnData;
-};
-
-const LocalFuncApplyFilers = ({ inFindValue, inFindKey, inData }) => {
-  let LocalFindKey = inFindKey;
-  let LocalFindValue = inFindValue;
-
-  let LocalFilterData = inData.filter(e => {
-    return eval(LocalFindKey) == LocalFindValue
+  LocalReturnData.JsonData = LocalData.map(element => {
+    return _.pick(element, LocalRequestBody);
   });
 
-  return LocalFilterData;
+  return LocalReturnData;
 };
 
 export { StartFunc };
