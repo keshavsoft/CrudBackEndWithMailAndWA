@@ -12,6 +12,7 @@ let StartFunc = ({ inDataAsJson, inws, inClients, inWss }) => {
 
 let LocalFuncToAllClients = ({ inDataAsJson, inWss }) => {
     inWss.clients.forEach((client) => {
+        console.log("1111111 : ",client.readyState);
         if (client.readyState === WebSocket.OPEN) {
             console.log("client : ",inDataAsJson);
             client.send(JSON.stringify(inDataAsJson));
