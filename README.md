@@ -28,6 +28,12 @@ This project focuses on automating crudBD operations for JSON files, making it e
   
 ### <a name="installation"></a>## **Installation** 🚀
 
+In root location 
+
+Data/inwards.json : {posts:[]}
+
+the above json should be present for running WhatsApp
+
 1. should have node 20 installed from https://nodejs.org/dist/v20.18.3/node-v20.18.3-x64.msi
 
 2. https://git-scm.com/
