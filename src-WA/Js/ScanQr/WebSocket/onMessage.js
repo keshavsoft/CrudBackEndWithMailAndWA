@@ -1,4 +1,5 @@
-const jVarCommonSuccessUrl = "WA/sendMessage.html";
+// const jVarCommonSuccessUrl = "WA/sendMessage.html";
+const jVarCommonSuccessUrl = "sendMessage.html";
 
 let StartFunc = (event) => {
     let jVarLocalCurrentTarget = event.currentTarget;
