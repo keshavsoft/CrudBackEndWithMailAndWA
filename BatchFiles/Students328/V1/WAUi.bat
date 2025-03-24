@@ -1,7 +1,7 @@
 @echo off
 
 mkdir Data
-echo {"posts":[]}> Data/inwards.json
+echo {"posts":[]}> .\Data\inwards.json
 
 node KCode/ForBatV10/Backend.js
 node KCode/ForBatV10/Database.js
