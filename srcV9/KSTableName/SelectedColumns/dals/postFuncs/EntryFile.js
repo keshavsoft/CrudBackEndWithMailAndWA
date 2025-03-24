@@ -1,4 +1,4 @@
-import { StartFunc as StartFuncFromSelectedColumns } from '../../kLowDb/ReadFromFile/SelectedColumns/getFunc.js';
+import { StartFunc as StartFuncFromSelectedColumns } from '../../kLowDb/readFromFile.js';
 
 let postDefaultFunc = ({ inRequestBody }) => {
     let LocalFromLowDb = StartFuncFromSelectedColumns({ inRequestBody });
