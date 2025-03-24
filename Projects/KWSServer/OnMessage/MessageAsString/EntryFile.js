@@ -6,6 +6,7 @@ import { StartFunc as myPhone } from "./myPhone.js";
 import { StartFunc as wAProfile } from "./wAProfile.js";
 import { StartFunc as StartFuncFromGetQrCode } from "./getQrCode.js";
 import { StartFunc as StartFuncStartWA } from "./startWA.js";
+import { StartFunc as StartFuncAiChat } from "./AiChat/entryFile.js";
 
 let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => {
     let LocalDataAsSting = inDataAsString;
@@ -43,7 +44,7 @@ let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => 
         StartFuncStartWA({ inSendFunc, inws });
     };
 
-    LocalFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
+    StartFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
 };
 
 const LocalFuncAiChat = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => {

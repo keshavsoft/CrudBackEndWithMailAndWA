@@ -15,7 +15,7 @@ let jFLocalForIsStudent = () => {
 <div class="bg-light rounded p-2">
     <div class="row">
         <div class="col">Are you a Student?</div>
-        <div class="col-1"><button class="btn btn-outline-success" onclick="javascript:webSocket.send('I am a Student')">Yes</button></div>
+        <div class="col-1"><button class="btn btn-outline-success" onclick="javascript:webSocket.send('Yes')">Yes</button></div>
     </div>
 </div>
 <small class="text-muted">2 mins ago</small>
