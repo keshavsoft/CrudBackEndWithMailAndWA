@@ -6,4 +6,5 @@ node KCode/ForBatV10/Database.js
 npm run home
 npm run WA
 
+mkdir ./public/WA
 cp -r  ./publicDir/WA/* ./public/WA
