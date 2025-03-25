@@ -8,5 +8,6 @@
     "Alter",
     "Images",
     "AggrFuncs",
-    "SelectedColumns"
+    "SelectedColumns",
+    "GroupByColumn"
 ]
