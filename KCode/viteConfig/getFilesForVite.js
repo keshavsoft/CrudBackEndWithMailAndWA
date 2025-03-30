@@ -12,7 +12,7 @@ const StartFunc = ({ inSrcPath }) => {
             files[LoopInsideKeyName] = resolve(root, filename)
             // files[`/${filename}`] = { Title: "Keshav" }
         });
-    console.log("aaaaaa : ", files);
+    // console.log("aaaaaa : ", files);
     return files;
 };
 

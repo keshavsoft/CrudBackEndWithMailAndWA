@@ -47,45 +47,4 @@ let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => 
     StartFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
 };
 
-const LocalFuncAiChat = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => {
-    let LocalSendObject = inClients.get(inws);
-
-    let LocalLastFind = inChatLog.findLast(element => {
-        return element.id === LocalSendObject.id && element.InOut === "Out";
-    });
-    // console.log("ahhhh : ", LocalLastFind);
-
-    switch (LocalLastFind.data.Type) {
-        case "IsStudent":
-            switch (inDataAsString) {
-                case "Yes":
-                    inSendFunc({ inMessage: "YourName" });
-
-                    break;
-                default:
-                    switch (inDataAsString) {
-                        case "Hai":
-                        case "hai":
-                            console.log("aaaaaaaaaaaaaaaaa");
-
-                            inSendFunc({ inMessage: "Hello" });
-
-                            break;
-                        default:
-                            break;
-                    }; break;
-            }; break;
-        default:
-            switch (inDataAsString) {
-                case "Hai":
-                case "hai":
-                    inSendFunc({ inMessage: "Hello" });
-
-                    break;
-                default:
-                    break;
-            }; break;
-    };
-};
-
 export { StartFunc };

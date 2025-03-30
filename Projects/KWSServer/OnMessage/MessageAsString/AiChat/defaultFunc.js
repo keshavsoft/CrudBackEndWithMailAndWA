@@ -1,4 +1,6 @@
 const StartFunc = ({ inDataAsString, inSendFunc }) => {
+    console.log("inDataAsString : ", inDataAsString);
+
     switch (inDataAsString) {
         case "Hai":
         case "hai":

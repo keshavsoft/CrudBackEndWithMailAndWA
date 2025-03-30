@@ -6,7 +6,7 @@ const StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) =
     let LocalLastFind = inChatLog.findLast(element => {
         return element.id === LocalSendObject.id && element.InOut === "Out";
     });
-    console.log("LocalLastFind : ", LocalLastFind);
+    // console.log("LocalLastFind : ", LocalLastFind);
 
     if (LocalLastFind === undefined) {
         StartFuncDefaultFunc({ inDataAsString, inSendFunc });
@@ -19,17 +19,8 @@ const StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) =
 
                         break;
                     default:
-                        switch (inDataAsString) {
-                            case "Hai":
-                            case "hai":
-                                console.log("aaaaaaaaaaaaaaaaa");
-
-                                inSendFunc({ inMessage: "Hello" });
-
-                                break;
-                            default:
-                                break;
-                        }; break;
+                        StartFuncDefaultFunc({ inDataAsString, inSendFunc });
+                        break;
                 }; break;
             default:
                 StartFuncDefaultFunc({ inDataAsString, inSendFunc });

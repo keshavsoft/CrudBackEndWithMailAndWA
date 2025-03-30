@@ -19,7 +19,7 @@ const StartFunc = async msg => {
         MessageRec: msg.body
     }));
 
-    console.log("aaaaaaaaaa : ", db.data);
+    // console.log("aaaaaaaaaa : ", db.data);
 
     if (LocalFromFetch.length > 0) {
         msg.reply('You are already registered with us');
