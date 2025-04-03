@@ -1,6 +1,5 @@
 @echo off
 
-call npm run home
 xcopy .\FrontEnd\ForWebSocket\KeshavSoft .\public\Chat /h /i /c /k /e /r /y
 
 cd ..\CrudFrontEndGulp
