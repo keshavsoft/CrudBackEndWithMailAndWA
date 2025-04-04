@@ -9,5 +9,6 @@
     "Images",
     "AggrFuncs",
     "SelectedColumns",
-    "GroupByColumn"
+    "GroupByColumn",
+    "ShowGet"
 ]
