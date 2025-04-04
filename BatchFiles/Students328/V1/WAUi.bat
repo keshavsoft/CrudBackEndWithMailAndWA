@@ -3,8 +3,6 @@
 mkdir Data
 echo {"posts":[]}> .\Data\inwards.json
 
-node KCode/ForBatV10/Backend.js
-node KCode/ForBatV10/Database.js
 call npm run home
 call npm run WA
 
