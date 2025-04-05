@@ -1,19 +1,16 @@
-// const jVarCommonSuccessUrl = "WA/sendMessage.html";
 const jVarCommonSuccessUrl = "sendMessage.html";
 
 let StartFunc = (event) => {
     let jVarLocalCurrentTarget = event.currentTarget;
 
     try {
-        // console.log("jVarLocalParse : ", event.currentTarget);
-        // event.currentTarget.send("pppppppppppp");
-        // event.currentTarget.send("-----");
-
         let jVarLocalParse = JSON.parse(event.data);
-        // console.log("jVarLocalParse : ", jVarLocalParse);
         switch (jVarLocalParse?.Type) {
             case "wAProfile":
-                wAProfile({ inData: jVarLocalParse.res, inWs: jVarLocalCurrentTarget });
+                wAProfile({
+                    inData: jVarLocalParse.res,
+                    inWs: jVarLocalCurrentTarget
+                });
 
                 break;
             case "QrCodeGenerated":
@@ -29,9 +26,6 @@ let StartFunc = (event) => {
 };
 
 const wAProfile = ({ inData, inWs }) => {
-
-    console.log("bbbbbbbbb : ", inData, inWs);
-
     if (inData === undefined) {
         inWs.send("GetQrCode");
     } else {
@@ -42,14 +36,9 @@ const wAProfile = ({ inData, inWs }) => {
         // location.href = "sendMessage.html";
         location.href = jVarCommonSuccessUrl;
     };
-
-    // jFLocalToInputUserNameId(inData.pushname);
-    // jFLocalToInputMobileNumberId(inData.me.user);
 };
 
 const jFLocalHandleQrCode = ({ inQrReceived }) => {
-    // console.log("inQrReceived : ", inQrReceived);
-
     if (inQrReceived === undefined === false) {
         KSQrRec = inQrReceived;
         jFCreateQrCode({ inQrCode: inQrReceived });
