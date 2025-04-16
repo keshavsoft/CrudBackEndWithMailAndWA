@@ -7,10 +7,9 @@ import { StartFunc as StartFuncFromAuthenticated } from "./authenticated.js";
 import { StartFunc as StartFuncFromQrCodeGenerated } from "../CommonExpose/qrCodeGenerated.js";
 import { startFunc as clientInfoFunc } from "../CommonExpose/clientInfo.js";
 
-const StartFunc = async ({ inReponse }) => {
+const StartFunc = async () => {
     let client;
-
-    let res = inReponse;
+    console.log("client : ", client);
 
     client = new Client({
         puppeteer: {

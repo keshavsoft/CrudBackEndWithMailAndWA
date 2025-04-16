@@ -41,7 +41,7 @@ let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => 
     };
 
     if (LocalDataAsSting === "StartWA") {
-        StartFuncStartWA({ inSendFunc, inws });
+        StartFuncStartWA().then();
     };
 
     StartFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
