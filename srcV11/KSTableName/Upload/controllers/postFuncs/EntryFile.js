@@ -53,8 +53,6 @@ let PostImageAndMailFunc = async (req, res) => {
         inpk: req.KeshavSoft.insertedPk,
         inImageName: req.KeshavSoft.Uuid
     });
-    
-    console.log("from Upload Controller : ", LocalFromRepo.response);
 
     res.status(200).send(`${req.KeshavSoft.insertedPk}`);
 };
