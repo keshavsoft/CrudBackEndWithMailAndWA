@@ -4,12 +4,15 @@
     "Bulk",
     "ShowWithColumns",
     "Search",
-    "Upload",
+    "UploadImage",
     "Alter",
     "Images",
     "AggrFuncs",
     "SelectedColumns",
     "GroupByColumn",
     "ShowGet",
-    "BulkPost"
+    "BulkPost",
+    "Upload",
+    "UploadImageAsBase64",
+    "RowShow"
 ]
