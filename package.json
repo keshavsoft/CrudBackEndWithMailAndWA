@@ -1,6 +1,6 @@
 {
   "name": "crudcbackwndwithmailandwa",
-  "version": "25.04.17",
+  "version": "25.04.18",
   "description": "CrudBackEndWithMailAndWA is the repo to create backend and database from schema and mail working",
   "main": "app.js",
   "type": "module",
@@ -27,7 +27,7 @@
     "querystring": "^0.2.1",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7",
-    "whatsapp-web.js": "^1.26.0",
+    "whatsapp-web.js": "^1.27.0",
     "ws": "^8.18.0"
   },
   "devDependencies": {
