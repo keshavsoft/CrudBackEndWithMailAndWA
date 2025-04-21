@@ -1,0 +1,6 @@
+PUT http://localhost:7019/Login/ForAny/RowAlter/AsIs/<UuId>
+Content-Type: application/json
+
+{
+    "isMailValidated": false
+  }
