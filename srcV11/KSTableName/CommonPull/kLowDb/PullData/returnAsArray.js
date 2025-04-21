@@ -1,7 +1,7 @@
-import { StartFunc as StartFuncReturnDbObjectWithSchema } from '../CommonFuncs/ReturnDbObjectWithSchema.js';
+import { StartFunc as StartFuncFromReturnDbObject } from '../CommonFuncs/ReturnDbObject.js';
 
 let StartFunc = () => {
-    const dbFromDbObjectWithSchema = StartFuncReturnDbObjectWithSchema();
+    const dbFromDbObjectWithSchema = StartFuncFromReturnDbObject();
 
     const db = dbFromDbObjectWithSchema.dbObject;
 
