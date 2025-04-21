@@ -1,8 +1,6 @@
-import fs from "fs";
 import { StartFunc as StartFuncReturnDbObject } from "./CommonFuncs/ReturnDbObject.js";
 
 let StartFunc = ({ inUsername, inPassword }) => {
-
     let LocalUsername = inUsername;
     let LocalPassword = inPassword;
 
@@ -17,7 +15,7 @@ let StartFunc = ({ inUsername, inPassword }) => {
         return LocalReturnData;
     };
 
-    if (LocalFuncCheckInData({ inUsername: LocalUsername, inLowDb:LocalFromLowDb})) {
+    if (LocalFuncCheckInData({ inUsername: LocalUsername, inLowDb: LocalFromLowDb })) {
         LocalReturnData.KReason = "UserName Already Exists";
         return LocalReturnData;
     };
@@ -33,7 +31,7 @@ let StartFunc = ({ inUsername, inPassword }) => {
     return LocalReturnData;
 };
 
-let LocalFuncCheckInData = ({ inUsername, inLowDb}) => {
+let LocalFuncCheckInData = ({ inUsername, inLowDb }) => {
 
     let LocalUsername = inUsername;
 

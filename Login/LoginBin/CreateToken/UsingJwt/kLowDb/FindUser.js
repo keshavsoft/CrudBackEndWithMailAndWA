@@ -11,7 +11,7 @@ let StartFunc = ({ inUsername, inPassword }) => {
         if (!LocalUser) {
             return { KTF: false, KReason: `Wrong Username: ${inUsername}` };
         };
-        
+
         if (LocalUser.Password !== inPassword) {
             return { KTF: false, KReason: `Wrong Password: ${inPassword}` };
         };
@@ -20,11 +20,9 @@ let StartFunc = ({ inUsername, inPassword }) => {
             LocalReturnData.KTF = true;
             LocalReturnData.DataPk = LocalUser.DataPk;
         };
-    }
+    };
 
     return LocalReturnData;
 };
-
-
 
 export { StartFunc };
