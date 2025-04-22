@@ -9,39 +9,52 @@ const StartFunc = async msg => {
     const defaultData = [];
 
     const db = await JSONFilePreset('Data/inwards.json', defaultData);
+    const LocalFromNumber = msg.from;
+
 
     await db.update(({ posts }) => posts.push({
-        FromNumber: msg.from,
+        FromNumber: LocalFromNumber,
         MessageRec: msg.body
     }));
 
-    if (msg.body === "ping") {
-        msg.reply('pong');
-    };
+    const LocalNumbersData = await JSONFilePreset('Data/mobiles.json', defaultData);
 
-    if (msg.body === "hi") {
-        msg.reply('Greetings from KeshavSoft');
-    };
+    console.log("LocalFromNumber : ", LocalNumbersData, LocalFromNumber);
 
-    if (msg.body === "Button") {
+    if (LocalFromNumber in LocalNumbersData.data) {
         const LocalClientInfo = getClientInfo();
-        // console.log("msg.from : ", msg.from);
 
-        LocalClientInfo.sendMessage(msg.from, "Send Button").then(PromiseData => {
+        LocalClientInfo.sendMessage(msg.from, LocalNumbersData.data[LocalFromNumber]).then(PromiseData => {
         });
-        // msg.send('send button');
-    };
+    } else {
+        if (msg.body === "ping") {
+            msg.reply('pong');
+        };
 
-    if (msg.body === "SendMedia") {
-        const media = MessageMedia.fromFilePath('./path/to/Keshav.png');
-        await msg.reply(media);
-    };
+        if (msg.body === "hi") {
+            msg.reply('Greetings from KeshavSoft');
+        };
 
-    if (msg.body === "SendFromUrl") {
-        const LocalMediaUrl = "https://washtex5.keshavsoft.com/assets/image%20(1)-Bo3S5UVn.png";
+        if (msg.body === "Button") {
+            const LocalClientInfo = getClientInfo();
+            // console.log("msg.from : ", msg.from);
 
-        const media = await MessageMedia.fromUrl(LocalMediaUrl);
-        await msg.reply(media);
+            LocalClientInfo.sendMessage(msg.from, "Send Button").then(PromiseData => {
+            });
+            // msg.send('send button');
+        };
+
+        if (msg.body === "SendMedia") {
+            const media = MessageMedia.fromFilePath('./path/to/Keshav.png');
+            await msg.reply(media);
+        };
+
+        if (msg.body === "SendFromUrl") {
+            const LocalMediaUrl = "https://washtex5.keshavsoft.com/assets/image%20(1)-Bo3S5UVn.png";
+
+            const media = await MessageMedia.fromUrl(LocalMediaUrl);
+            await msg.reply(media);
+        };
     };
 };
 
