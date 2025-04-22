@@ -1,6 +1,6 @@
 import { getClientInfo, startFunc as StartFuncFromClientInfo } from "../CommonExpose/clientInfo.js";
 
-const StartFunc = async () => {
+const StartFunc = () => {
     let LocalClient = getClientInfo();
 
     console.log('client info :', Object.keys(LocalClient));

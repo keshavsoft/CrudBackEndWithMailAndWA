@@ -45,8 +45,8 @@ let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => 
         StartFuncStartWA().then();
     };
 
-    if (LocalDataAsSting === "stop") {
-        StartFuncStopWA().then();
+    if (LocalDataAsSting === "StopWA") {
+        StartFuncStopWA({ inws });
     };
 
     StartFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });

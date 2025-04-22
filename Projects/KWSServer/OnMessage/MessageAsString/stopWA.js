@@ -1,7 +1,8 @@
 import { StartFunc as StartFuncFromWA } from "../../../../WA/signOut.js";
 
-let StartFunc = async () => {
-    await StartFuncFromWA();
+let StartFunc = ({ inws }) => {
+    StartFuncFromWA();
+    inws.send("StopWADone");
 };
 
 export { StartFunc };

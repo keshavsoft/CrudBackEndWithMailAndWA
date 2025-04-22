@@ -9,7 +9,6 @@ import { startFunc as clientInfoFunc } from "../CommonExpose/clientInfo.js";
 
 const StartFunc = async () => {
     let client;
-    console.log("client : ", client);
 
     client = new Client({
         puppeteer: {
@@ -17,6 +16,8 @@ const StartFunc = async () => {
         },
         authStrategy: new LocalAuth()
     });
+
+    console.log("client : ", client);
 
     client.on('qr', (qr) => {
         console.log("qr is generated : ", qr);
