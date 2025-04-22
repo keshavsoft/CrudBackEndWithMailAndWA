@@ -3,7 +3,7 @@ let CommonInfo;
 
 const startFunc = ({ inClient }) => {
     CommonInfo = inClient;
-    CommonData = inClient.info;
+    CommonData = inClient?.info;
 };
 
 const readFunc = () => {

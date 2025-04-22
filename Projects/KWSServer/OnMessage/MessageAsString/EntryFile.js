@@ -7,6 +7,7 @@ import { StartFunc as wAProfile } from "./wAProfile.js";
 import { StartFunc as StartFuncFromGetQrCode } from "./getQrCode.js";
 import { StartFunc as StartFuncStartWA } from "./startWA.js";
 import { StartFunc as StartFuncAiChat } from "./AiChat/entryFile.js";
+import { StartFunc as StartFuncStopWA } from "./stopWA.js";
 
 let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => {
     let LocalDataAsSting = inDataAsString;
@@ -42,6 +43,10 @@ let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => 
 
     if (LocalDataAsSting === "StartWA") {
         StartFuncStartWA().then();
+    };
+
+    if (LocalDataAsSting === "stop") {
+        StartFuncStopWA().then();
     };
 
     StartFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });
