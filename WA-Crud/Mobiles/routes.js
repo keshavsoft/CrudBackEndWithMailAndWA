@@ -2,10 +2,10 @@ import express from 'express';
 
 var router = express.Router();
 
-import { router as routerFromReadFile } from './ReadFile/routes.js';
-import { router as routerFromInsert } from './Insert/routes.js';
+import { router as routerFromReadContent } from './ReadContent/routes.js';
+import { router as routerFromInsert } from './InsertContent/routes.js';
 
-router.use('/ReadFile', routerFromReadFile);
-router.use('/Insert', routerFromInsert);
+router.use('/ReadContent', routerFromReadContent);
+router.use('/InsertContent', routerFromInsert);
 
 export { router };

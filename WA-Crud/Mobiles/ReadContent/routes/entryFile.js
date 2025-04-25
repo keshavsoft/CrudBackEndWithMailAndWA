@@ -4,7 +4,7 @@ var router = express.Router();
 
 import {
     GetFunc
-} from '../../controllers/getFuncs/EntryFile.js';
+} from '../controllers/EntryFile.js';
 
 router.get('/', GetFunc);
 

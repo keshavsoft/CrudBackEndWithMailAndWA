@@ -1,6 +1,6 @@
 import {
     postDefaultFunc as postDefaultFuncFromDal,
-} from '../../dals/postFuncs/EntryFile.js';
+} from '../dals/entryFile.js';
 
 let postDefaultFunc = async ({ inKey, inValu }) => {
     return postDefaultFuncFromDal({ inKey, inValu });
