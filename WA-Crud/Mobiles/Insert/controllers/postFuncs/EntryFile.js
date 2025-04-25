@@ -3,7 +3,9 @@ import {
 } from '../../repos/postFuncs/EntryFile.js';
 
 let postFilterDataFromBodyFunc = async (req, res) => {
-    const [LocalKey, LocalValue] = Object.entries(req.body)[0];
+    let LocalRequestBody = req.body;
+    let LocalKey = LocalRequestBody.Key;
+    let LocalValue = LocalRequestBody.Value
 
     let LocalFromRepo = await postDefaultFuncFromRepo({ inKey: LocalKey, inValu: LocalValue });
 

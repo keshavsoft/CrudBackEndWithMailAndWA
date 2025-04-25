@@ -2,5 +2,6 @@ POST http://localhost:7328/WA-Crud/Mobiles/Insert
 Content-Type: application/json
 
 {
-  "SSSS":"sree"  
+  "Key":"919848163021@c.us",
+  "Value":"Keshav"
 }
