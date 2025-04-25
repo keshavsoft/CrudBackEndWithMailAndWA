@@ -6,6 +6,8 @@ import {
     postFilterDataFromBodyFunc
 } from '../../controllers/postFuncs/EntryFile.js';
 
-router.post('/', postFilterDataFromBodyFunc);
+import { StartFunc as middlewarespostFilterDataFromBodyFunc } from "../../middlewares/postFuncs/EntryFile.js";
+
+router.post('/', middlewarespostFilterDataFromBodyFunc, postFilterDataFromBodyFunc);
 
 export { router };
