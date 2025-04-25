@@ -1,0 +1,6 @@
+POST http://localhost:7328/WA-Crud/Mobiles/Create
+Content-Type: application/json
+
+{
+  "Name":"sree"  
+}

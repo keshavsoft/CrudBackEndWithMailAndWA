@@ -12,6 +12,7 @@ import { StartFunc as StartFuncPortListen } from "./PortListen.js";
 import { StartFunc as MiddleWaresBinSecured } from "./MiddleWares/MiddleWares.binSecured/EntryFile.js";
 import { StartFunc as StartFuncKWSServer } from "./Projects/KWSServer/EntryFile.js";
 import { StartFunc as StartFuncFromEntryFile } from "./WA/entryFile.js";
+import { router as StartFuncFromWACrud } from "./WA-Crud/routes.js";
 
 import express from 'express';
 import http from 'http';
@@ -61,6 +62,8 @@ app.use('/utility', routerForUtility);
 app.use('/Common', routerFromCommon);
 app.use('/Login', routerFromLogin);
 app.use('/Cors', CommonCorsFunc, Cors);
+app.use('/WA-Crud', StartFuncFromWACrud);
+
 
 StartFuncKWSServer(server);
 
