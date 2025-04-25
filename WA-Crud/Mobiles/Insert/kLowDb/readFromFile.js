@@ -1,16 +1,16 @@
 import fs from "fs";
 
-const StartFunc = ({ inRequestBody }) => {
+const StartFunc = ({ inKey, inValu }) => {
   const filePath = `Data/mobiles.json`;
 
   try {
     if (fs.existsSync(filePath)) {
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      const updatedData = { ...data, ...inRequestBody };
-      fs.writeFileSync(filePath, JSON.stringify(updatedData, null, 2), 'utf8');
+      data[inKey] = inValu;
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
       return { KTF: true };
     } else {
-      console.warn(`File ${inFileName}.json does not exist.`);
+      console.warn(`File ${filePath} does not exist.`);
     }
   } catch (err) {
     console.error('Error:', err);

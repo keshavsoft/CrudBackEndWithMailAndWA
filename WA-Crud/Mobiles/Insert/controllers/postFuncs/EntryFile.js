@@ -3,9 +3,9 @@ import {
 } from '../../repos/postFuncs/EntryFile.js';
 
 let postFilterDataFromBodyFunc = async (req, res) => {
-    let LocalRequestBody = req.body;
+    const [LocalKey, LocalValue] = Object.entries(req.body)[0];
 
-    let LocalFromRepo = await postDefaultFuncFromRepo({ inRequestBody: LocalRequestBody });
+    let LocalFromRepo = await postDefaultFuncFromRepo({ inKey: LocalKey, inValu: LocalValue });
 
     if (LocalFromRepo === false) {
         res.status(500).send(LocalFromRepo.KReason);

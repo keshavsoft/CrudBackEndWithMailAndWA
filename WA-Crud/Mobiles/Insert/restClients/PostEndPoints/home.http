@@ -1,0 +1,6 @@
+POST http://localhost:7328/WA-Crud/Mobiles/Insert
+Content-Type: application/json
+
+{
+  "SSSS":"sree"  
+}
