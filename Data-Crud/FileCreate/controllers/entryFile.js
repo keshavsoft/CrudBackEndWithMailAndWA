@@ -1,17 +1,18 @@
 import {
     GetFunc as GetFuncRepo
-} from '../repos/EntryFile.js';
+} from '../repos/entryFile.js';
 
 let GetFunc = (req, res) => {
-    let LocalFromRepo = GetFuncRepo();
+    const LocalFileName = req.params.FileName;
+
+    let LocalFromRepo = GetFuncRepo({ inFileName: LocalFileName });
 
     if (LocalFromRepo.KTF === false) {
         res.status(500).send(LocalFromRepo.KReason);
-
         return;
     };
 
-    res.status(200).send(LocalFromRepo.JsonData);
+    res.status(200).end();
 };
 
 export {
