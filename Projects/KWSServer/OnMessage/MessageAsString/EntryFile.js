@@ -9,6 +9,7 @@ import { StartFunc as StartFuncStartWA } from "./startWA.js";
 import { StartFunc as StartFuncAiChat } from "./AiChat/entryFile.js";
 import { StartFunc as StartFuncStopWA } from "./stopWA.js";
 import { StartFunc as StartFuncFromWAReadAllChats } from "./wAReadAllChats.js";
+import { StartFunc as StartFuncFromReadFromSingleNumber } from "./ForWA/readFromSingleNumber.js";
 
 let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => {
     let LocalDataAsSting = inDataAsString;
@@ -52,6 +53,12 @@ let StartFunc = ({ inDataAsString, inws, inClients, inChatLog, inSendFunc }) => 
 
     if (LocalDataAsSting === "WAReadAllChats") {
         StartFuncFromWAReadAllChats({ inws });
+    };
+
+    if (LocalDataAsSting.startsWith('WAReadFrom')) {
+        const LocalFromNumber = LocalDataAsSting.split('@')[1];
+
+        StartFuncFromReadFromSingleNumber({ inws, inFromNumber: LocalFromNumber });
     };
 
     StartFuncAiChat({ inDataAsString, inws, inClients, inChatLog, inSendFunc });

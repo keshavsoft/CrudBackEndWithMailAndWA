@@ -4,22 +4,25 @@ import Whatsapp from 'whatsapp-web.js';
 const { MessageMedia } = Whatsapp;
 
 import { getClientInfo } from "../CommonExpose/clientInfo.js";
+import { StartFunc as StartFuncFromInsertToFile } from "./insertToFile.js";
 
 const StartFunc = async msg => {
     const defaultData = [];
-
-    const db = await JSONFilePreset('Data/inwards.json', defaultData);
     const LocalFromNumber = msg.from;
+    const timestamp = msg.timestamp;
 
-
-    await db.update(({ posts }) => posts.push({
-        FromNumber: LocalFromNumber,
-        MessageRec: msg.body
-    }));
+    await StartFuncFromInsertToFile({
+        inFrom: LocalFromNumber,
+        inMessage: msg.body,
+        inTimeStamp: timestamp
+    });
 
     const LocalNumbersData = await JSONFilePreset('Data/mobiles.json', defaultData);
 
-    console.log("LocalFromNumber : ", LocalNumbersData, LocalFromNumber);
+    const date = new Date(timestamp * 1000); // Multiply by 1000 to convert to milliseconds
+    const formattedDate = date.toLocaleString(); // Or use a different format as needed
+
+    // console.log("formattedDate : ", formattedDate);
 
     if (LocalFromNumber in LocalNumbersData.data) {
         const LocalClientInfo = getClientInfo();
